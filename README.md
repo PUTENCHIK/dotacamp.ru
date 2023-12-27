@@ -1,6 +1,6 @@
 Все команды вводятся в директории проекта:
-		mkdir flask_auth_app
- 		cd flask_auth_app
+		mkdir flask_auth_app <br />
+ 		cd flask_auth_app<br />
 
 1. Установка необходимых пакетов:
 		pip install python3
