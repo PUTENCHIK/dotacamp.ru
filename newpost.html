@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="trouble">
+    <span class="trouble_text">
+        {{ messages[0] }}
+    </span>
+</div>
+{% endif %}
+{% endwith %}
+
+<form method="POST" action="/create" enctype="multipart/form-data">
+    <div class="slide">
+        <div class="create_post_upload_button">
+            <input type="file" name="create_post_upload" id="postImg" class="create_post_upload">
+            <img class="picture" src="{{ url_for('static', filename='img/picture.png') }}" alt="">
+            <span class="create_post_upload_text">Загрузить фото</span>
+        </div>
+        <div class="post_info">
+            <div class="user_info">
+                <img class="user_photo" src="{{ url_for('static', filename='/avatars/'+current_user.avatar_path)}}" alt="">
+                <span class="user_name">{{ current_user.login }}</span>
+            </div>
+            <div class="post_feedback post_public">
+                <input class="submit_post" type="submit" value="Опубликовать">
+            </div>
+            <div class="post_text_block">
+                <span class="post_text">
+                    <textarea name="create_post_text" class="create_post_text" rows="5" cols="33" minlength="0" maxlength="300"></textarea>
+                </span>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="{{ url_for('static', filename='js/newpost.js')}}"></script>
+{% endblock %}
