@@ -15,6 +15,7 @@
    		create table users(id INT, login TEXT, password TEXT, id_post INT, is_admin BOOLEAN);
    		create table posts(id INT, id_author INT, text TEXT, img_path TEXT);
    		create table scores(id INT, id_user INT, id_post INT, score INT);
+   		exit;
 4. Активация виртуальной среды и её настройка:
 		source auth/bin/activate
 		pip install flask flask-sqlalchemy flask-login
